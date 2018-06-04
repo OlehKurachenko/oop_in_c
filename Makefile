@@ -17,7 +17,8 @@ SRC_DIR = src
 OBJ_DIR = obj
 
 SRC_N =	main.c \
-		point/point.c
+		point/point.c \
+		colored_point/colored_point.c
 
 SRC = $(addprefix $(SRC_DIR)/, $(SRC_N))
 
@@ -33,6 +34,7 @@ $(OBJ_DIR)/%.o : $(SRC_DIR)/%.c
 $(OBJ_DIR):
 	mkdir -p $(OBJ_DIR)
 	mkdir -p $(OBJ_DIR)/point
+	mkdir -p $(OBJ_DIR)/colored_point
 
 $(NAME): $(OBJ_DIR) $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)

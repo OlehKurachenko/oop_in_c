@@ -10,6 +10,7 @@
 
 #include <stdio.h>
 #include "point/point.h"
+#include "colored_point/colored_point.h"
 
 int main(void) {
     t_point a;
@@ -17,5 +18,14 @@ int main(void) {
     point_ctor(&a, 12, 23);
 
     printf("Point: %u %u\n", point_get_x(&a), point_get_y(&a));
+
+    t_colored_point b;
+
+    colored_point_ctor(&b, 34, 12, 1);
+
+    printf("Point: %u %u\n", point_get_x((t_point *)&b), point_get_y((t_point *)&b));
+
+    colored_point_print(&b);
+
     return (0);
 }
