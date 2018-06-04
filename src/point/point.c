@@ -10,7 +10,19 @@
 
 #include "point.h"
 
+static struct s_point_vtbl  virtual_table() {
+    struct s_point_vtbl vtbl;
+
+    vtbl.draw = &point_draw_pvf;
+    return vtbl;
+}
+
+
+// TODO understand why is fails
 void point_ctor(t_point *const self, const unsigned x, const unsigned y) {
+    static struct s_point_vtbl    vtbl = virtual_table();
+
+    self->vptr = &vtbl;
     self->x = x;
     self->y = y;
 }
@@ -53,4 +65,17 @@ void        point_set_x(t_point *const self, unsigned x)
 void        point_set_y(t_point *const self, unsigned y)
 {
     self->y = y;
+}
+
+// virtual section
+
+void        point_draw(const t_point *const self) {
+    return (*self->vptr->draw)(self);
+}
+
+// pure-virtual section
+
+void        point_draw_pvf(const t_point *const self)
+{
+    assert(self->x * 0);
 }

@@ -12,12 +12,20 @@
 #define OOP_IN_C_POINT_H
 
 #include <stdlib.h>
+#include <assert.h>
+
+struct s_point_vtbl;
 
 typedef struct      s_point
 {
-    unsigned    x;
-    unsigned    y;
+    const struct s_point_vtbl   *vptr;
+    unsigned                    x;
+    unsigned                    y;
 }                   t_point;
+
+struct s_point_vtbl {
+    void (*draw)(const t_point *const self);
+};
 
 // Constructor which performs initialization
 void        point_ctor(t_point *const self, const unsigned x, const unsigned y);
@@ -38,5 +46,11 @@ unsigned    point_get_y(t_point *const self);
 void        point_set_x(t_point *const self, unsigned x);
 
 void        point_set_y(t_point *const self, unsigned y);
+
+// virtual section
+
+void        point_draw(const t_point *const self);
+
+void        point_draw_pvf(const t_point *const self);
 
 #endif //OOP_IN_C_POINT_H
