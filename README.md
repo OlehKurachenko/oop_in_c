@@ -8,10 +8,10 @@ Well, as I have to use only C for my first projects in [UNIT Factory], I've deci
 to find a way to write in OOP. It is a very useful as the mechanism of organizing
 code, especially for graphics projects.
 
-### Note
+### :exclamation:Note
 
 Some of code here should look weird. This is because of [The Norm][42_Norm] - 
-a set of ruled which are mandatory for projects in C in [UNIT Factory]
+a set of rules which are mandatory for projects in C in [UNIT Factory]
 
 ### Sources
 
