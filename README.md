@@ -4,9 +4,14 @@ Practice project while reading "Application Note Object-Oriented Programming in 
 
 ### Reason
 
-Well, as I have to use only C for my first projects in [Unit Factory], I've decided
+Well, as I have to use only C for my first projects in [UNIT Factory], I've decided
 to find a way to write in OOP. It is a very useful as the mechanism of organizing
 code, especially for graphics projects.
+
+### Note
+
+Some of code here should look weird. This is because of [The Norm][42_Norm] - 
+a set of ruled which are mandatory for projects in C in [UNIT Factory]
 
 ### Sources
 
@@ -14,3 +19,4 @@ code, especially for graphics projects.
 
 [UNIT Factory]: https://unit.ua/en/
 [AN_OOP_in_C]: https://www.state-machine.com/doc/AN_OOP_in_C.pdf
+[42_Norm]: https://github.com/2ndcouteau/Norm_doc/blob/master/norme.en.pdf
